@@ -9,5 +9,5 @@ Run separately:
 and
 ./proto_zerocopy_publisher
 
-![image1](https://github.com/solara0616/zerocopy-protobuf/blob/main/iceoryx_examples/protobuf/time_delay_comparison_1.png)
-![image2](https://github.com/solara0616/zerocopy-protobuf/blob/main/iceoryx_examples/protobuf/time_delay_comparison_2.png)
+![time delay 1 (zero copy VS non zero copy](https://github.com/solara0616/zerocopy-protobuf/blob/main/iceoryx_examples/protobuf/time_delay_comparison_1.png)
+![time delay 2 (zero copy VS non zero copy](https://github.com/solara0616/zerocopy-protobuf/blob/main/iceoryx_examples/protobuf/time_delay_comparison_2.png)
