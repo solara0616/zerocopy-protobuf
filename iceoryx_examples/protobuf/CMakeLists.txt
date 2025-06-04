@@ -48,6 +48,22 @@ set(ZERO_COPY_SUBSCRIBER_SRCS
     ./protobuf_zero_copy_subscriber.cpp
     ./person.pb.cc)
 
+set(NON_ZERO_COPY_PUBLISHER_LINK_LIBS
+    iceoryx_posh::iceoryx_posh_roudi
+    protobuf::libprotobuf)
+
+set(NON_ZERO_COPY_PUBLISHER_SRCS
+    ./protobuf_non_zero_copy_publisher.cpp
+    ./person.pb.cc)
+
+set(NON_ZERO_COPY_SUBSCRIBER_LINK_LIBS
+    iceoryx_posh::iceoryx_posh_roudi
+    protobuf::libprotobuf)
+
+set(NON_ZERO_COPY_SUBSCRIBER_SRCS
+    ./protobuf_non_zero_copy_subscriber.cpp
+    ./person.pb.cc)
+
 iox_add_executable(
     TARGET      proto_zerocopy_publiser
     # Since we have one process where multiple threads are created we need to increase the stack size
@@ -57,9 +73,25 @@ iox_add_executable(
 )
 
 iox_add_executable(
+    TARGET      proto_non_zerocopy_publiser
+    # Since we have one process where multiple threads are created we need to increase the stack size
+    STACK_SIZE  3500000
+    FILES       ${NON_ZERO_COPY_PUBLISHER_SRCS}
+    LIBS        ${NON_ZERO_COPY_PUBLISHER_LINK_LIBS}
+)
+
+iox_add_executable(
     TARGET      proto_zerocopy_subscriber
     # Since we have one process where multiple threads are created we need to increase the stack size
     STACK_SIZE  3500000
     FILES       ${ZERO_COPY_SUBSCRIBER_SRCS}
     LIBS        ${ZERO_COPY_SUBSCRIBER_LINK_LIBS}
+)
+
+iox_add_executable(
+    TARGET      proto_non_zerocopy_subscriber
+    # Since we have one process where multiple threads are created we need to increase the stack size
+    STACK_SIZE  3500000
+    FILES       ${NON_ZERO_COPY_SUBSCRIBER_SRCS}
+    LIBS        ${NON_ZERO_COPY_SUBSCRIBER_LINK_LIBS}
 )
