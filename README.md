@@ -8,5 +8,3 @@ Run separately:
 ./proto_zerocopy_subscriber
 and
 ./proto_zerocopy_publisher
-
-![time delay comparision_1 (zero copy VS non zero copy](https://github.com/solara0616/zerocopy-protobuf/blob/main/iceoryx_examples/protobuf/time_delay_comparison_1.png)
