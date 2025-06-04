@@ -68,11 +68,11 @@ void* block_alloc(size_t size, size_t& actualSize) {
 }
 
 void block_dealloc(void* ptr, size_t size) {
-    auto* pPub = get_publisher_singleton_instance();
+    /*auto* pPub = get_publisher_singleton_instance();
 
     if (pPub != nullptr) {
         return pPub->releaseBlock(ptr);
-    }
+    }*/
 }
 
 void publisher()
