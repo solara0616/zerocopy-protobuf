@@ -93,7 +93,7 @@ class PROTOBUF_EXPORT ArenaMetricsCollector {
 
 struct AllocationPolicy {
   static constexpr size_t kDefaultStartBlockSize = 256;
-  static constexpr size_t kDefaultMaxBlockSize = 8192;
+  static constexpr size_t kDefaultMaxBlockSize = 1024 * 1024 * 4 - 48;/*8192*/;
 
   size_t start_block_size = kDefaultStartBlockSize;
   size_t max_block_size = kDefaultMaxBlockSize;
